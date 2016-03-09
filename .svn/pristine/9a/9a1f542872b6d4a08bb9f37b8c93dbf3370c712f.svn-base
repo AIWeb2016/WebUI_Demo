@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 文档框架样式 -->
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+    <script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="../../js/rainbow.min.js"></script>
+</head>
+
+<body>
+<div class="cont">
+    <h1 class="main_title">流程条 StepInfo</h1>
+    <p class="view-desc">带详细的文字描述流程条</p>
+    <div class="demo_content">
+        <!-- 组件示例区域 -->
+        <div class="aries_demo bs-example">
+<div class="aiui-steps">
+    <div class="aiui-steps-item aiui-steps-status-finish" style="width: 211px;">
+        <div class="aiui-steps-tail"><i></i></div>
+        <div class="aiui-steps-head">
+            <div class="aiui-steps-head-inner"><span class="aiui-steps-icon aiuiicon aiuiicon-check"></span></div>
+        </div>
+        <div class="aiui-steps-main" style="max-width:100px;">
+            <div class="aiui-steps-title">已完成</div>
+            <div class="aiui-steps-description">这里是多信息的描述啊</div>
+        </div>
+    </div>
+    <div class="aiui-steps-item aiui-steps-status-process" style="width: 211px;">
+        <div class="aiui-steps-tail"><i></i></div>
+        <div class="aiui-steps-head">
+            <div class="aiui-steps-head-inner"><span class="aiui-steps-icon">2</span></div>
+        </div>
+        <div class="aiui-steps-main" style="max-width:100px;">
+            <div class="aiui-steps-title">进行中</div>
+            <div class="aiui-steps-description">这里是多信息的耶哦耶哦哦耶哦耶</div>
+        </div>
+    </div>
+    <div class="aiui-steps-item aiui-steps-status-wait" style="width: 205px;">
+        <div class="aiui-steps-tail"><i></i></div>
+        <div class="aiui-steps-head">
+            <div class="aiui-steps-head-inner"><span class="aiui-steps-icon">3</span></div>
+        </div>
+        <div class="aiui-steps-main" style="max-width:100px;">
+            <div class="aiui-steps-title">又一个待运行</div>
+            <div class="aiui-steps-description">描述啊描述啊</div>
+        </div>
+    </div>
+    <div class="aiui-steps-item aiui-steps-item-last aiui-steps-status-wait" ><span></span>
+        <div class="aiui-steps-head">
+            <div class="aiui-steps-head-inner"><span class="aiui-steps-icon">4</span></div>
+        </div>
+        <div class="aiui-steps-main" style="max-width:100px;">
+            <div class="aiui-steps-title">待运行</div>
+            <div class="aiui-steps-description">这里是多信息的描述啊</div>
+        </div>
+    </div>
+</div>
+
+        </div>  
+        <!-- 组件示例代码区域 -->
+        <div class="highlight" ></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+</body>
+
+</html>

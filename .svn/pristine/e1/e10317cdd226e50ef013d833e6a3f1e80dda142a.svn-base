@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>tooltips</title>
+		<!-- 文档框架样式 -->
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+
+		<style type="text/css">
+			.webui-pane {
+				border: 1px solid #000000;
+				width: 100px;
+				display: block;
+				padding: 5px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 16px;
+			}
+			
+			.webui-input {
+				display: block;
+				width: 230px;
+				height: 28px;
+				float: right;
+			}
+			
+			p {
+				font-size: 16px;
+				display: block;
+				padding: 6px 0 6px 2px;
+				margin: 20px 0 20px 0;
+			}
+			
+			.dd,
+			.webui-pane {
+				border: 1px solid #000000;
+				width: 100px;
+				display: block;
+				padding: 5px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.ui-label {
+				width: 56px;
+				display: block;
+				float: left;
+				font-size: 12px;
+				line-height: 28px;
+				text-align: right;
+				border: none;
+				padding-right: 10px;
+			}
+			
+			.ui-desk {
+				opacity: 1;
+				background-color: rgba(255, 255, 255, 1);
+			}
+			
+			.aries_demo.bs-example {
+				background: #eee;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="cont">
+			<h1 class="main_title">TIPS</h1>
+			<h2 class="view-desc">提示使用案例</h2>
+			<p class="main_title">1.tooltips</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+
+				<div class="aries_demo bs-example">
+<div class="body">
+	<div style="padding:10px 200px">
+		<div id="pp1" class="webui-pane">right</div>
+	</div>
+	<div style="padding:10px 200px">
+		<div id="pp2" class="webui-pane">bottom</div>
+	</div>
+	<div style="padding:10px 200px">
+		<div id="pp3" class="webui-pane">left</div>
+	</div>
+	<div style="padding:10px 200px">
+		<div id="pp4" class="webui-pane">top</div>
+	</div>
+	<div style="padding:10px 200px">
+		<div class="dd">点击</div>
+	</div>
+</div>
+
+<script>
+$(function() {
+	$('#pp1').tooltip({
+	position: 'right',
+	content: '省内网9元/月一价全包，含2-19人网内省内不限量畅打'
+});
+$('#pp2').tooltip({
+	position: 'bottom',
+	content: '省内网9元/月一价全包，含2-19人网内省内不限量畅打'
+});
+$('#pp3').tooltip({
+	position: 'left',
+	content: '省内网9元/月一价全包，含2-19人网内省内不限量畅打'
+});
+$('#pp4').tooltip({
+	position: 'top',
+	content: '省内网9元/月一价全包，含2-19人网内省内不限量畅打',
+	onPosition: function() {
+		$(this).tooltip('tip').css('left', $(this).offset().left);
+		$(this).tooltip('arrow').css('left', 20);
+	}
+});
+$('.dd').each(function() {
+	$(this).tooltip({
+		position: 'bottom',
+		content: $('<div class="ui-desk"></div>'),
+		showEvent: 'click',
+		onUpdate: function(content) {
+			content.panel({
+				width: 200,
+				border: false,
+				href: '_dialog.html'
+			});
+		},
+		onShow: function() {
+			var t = $(this);
+			$(this).tooltip('tip').css({
+				background: '#fff',
+				borderColor: '#44abe5',
+				opacity: 1
+			});
+			t.unbind().bind('mouseenter', function() {
+				t.tooltip('show');
+			}).bind('mouseleave', function() {
+				t.tooltip('show');
+				});
+			}
+		});
+	});
+});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">2.alert提示</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin:20px 0;">
+	<a href="#" class="webui-linkbutton btn-blue" onclick="alert1()">Alert</a>
+	<a href="#" class="webui-linkbutton btn-blue" onclick="alert2()">Error</a>
+	<a href="#" class="webui-linkbutton btn-blue" onclick="alert3()">Info</a>
+	<a href="#" class="webui-linkbutton btn-blue" onclick="alert4()">Question</a>
+	<a href="#" class="webui-linkbutton btn-blue" onclick="alert5()">Warning</a>
+</div>
+<script>
+	function alert1() {
+		$.messager.alert('标题', 'Here is a message!');
+	}
+
+	function alert2() {
+		$.messager.alert('My Title', 'Here is a error message!', 'error');
+	}
+
+	function alert3() {
+		$.messager.alert('My Title', 'Here is a info message!', 'info');
+	}
+
+	function alert4() {
+		$.messager.alert('My Title', 'Here is a question message!', 'question');
+	}
+
+	function alert5() {
+		$.messager.alert('My Title', 'Here is a warning message!', 'warning');
+	}
+
+	function alert6() {
+		$.messager.alert('My Title', '触发函数', 'info');
+	}
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">3.confirm提示</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin:20px 0;">
+	<a href="#" class="webui-linkbutton btn-blue" onclick="confirm1();">Confirm</a>
+	<a href="#" class="webui-linkbutton btn-blue" onclick="prompt1()">Prompt</a>
+</div>
+<script>
+	function alert7(mess) {
+		$.messager.alert('My Title', mess);
+	}
+
+	function confirm1() {
+		$.messager.confirm('My Title', 'Are you confirm this?', function(r) {
+			if (r) {
+				alert7('confirmed: ' + r);
+			}
+		});
+	}
+
+	function prompt1() {
+		$.messager.prompt('My Title', 'Please type something', function(r) {
+			if (r) {
+				alert7('you type: ' + r);
+			}
+		});
+	}
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">4.模态对话框</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin-bottom: 280px;">
+	<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-1').dialog('open')">Open</a>
+	<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-1').dialog('close')">Close</a>
+</div>
+<div id="dlg-1" class="webui-dialog" title="输入框、其他组件" style="top: 960px;" data-options="buttons: '#dlg-1-buttons'"><!--closed:true默认关闭-->
+	<div>
+		<span class="ui-label">标题名称</span>
+		<input class="webui-input">
+	</div>
+</div>
+<div id="dlg-1-buttons">
+	<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="javascript:alert8()">保存</a>
+	<a href="javascript:void(0)" class="webui-linkbutton btn-grey" onclick="javascript:$('#dlg-1').dialog('close')">关闭</a>
+</div>
+<script>
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">5.带图标模态对话框</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin-bottom: 280px;">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-2').dialog('open')">Open</a>
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-2').dialog('close')">Close</a>
+</div>
+<div id="dlg-2" class="webui-dialog" title="输入框、其他组件" style="top: 1400px;" data-options="
+	iconCls:'icon-save',
+	buttons: '#dlg-2-buttons'
+">
+<div>
+	<span class="ui-label">标题名称</span>
+	<input class="webui-input">
+</div>
+</div>
+
+<div id="dlg-2-buttons">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="javascript:alert8()">保存</a>
+<a href="javascript:void(0)" class="webui-linkbutton btn-grey" onclick="javascript:$('#dlg-2').dialog('close')">关闭</a>
+</div>
+<script>
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">6.两个按钮带图标对话框</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin-bottom: 280px;">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-3').dialog('open')">Open</a>
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-3').dialog('close')">Close</a>
+</div>
+<div id="dlg-3" class="webui-dialog webui-dialog-tip" title="确认对话框" style="top: 1840px;" data-options="
+	iconCls:'icon-save',
+	buttons: '#dlg-3-buttons'
+">
+<div class="webui-dialog-text">
+	这个是提示内容！可以自定义设置显示内容！
+</div>
+</div>
+<div id="dlg-3-buttons" class="dialog-button-2">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="javascript:alert8()">保存</a>
+<a href="javascript:void(0)" class="webui-linkbutton btn-grey" onclick="javascript:$('#dlg-3').dialog('close')">关闭</a>
+</div>
+<script>
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">7.单个按钮不带图标对话框</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div style="margin-bottom: 280px;">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-4').dialog('open')">Open</a>
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="$('#dlg-4').dialog('close')">Close</a>
+</div>
+<div id="dlg-4" class="webui-dialog webui-dialog-tip" title="确认对话框" style="top: 2280px;" data-options="
+	buttons: '#dlg-4-buttons'
+">
+<div class="webui-dialog-text">
+	这个是提示内容！可以自定义设置显示内容！
+</div>
+</div>
+<div id="dlg-4-buttons" class="dialog-button-2">
+<a href="javascript:void(0)" class="webui-linkbutton btn-blue" onclick="javascript:alert8()">确定</a>
+</div>
+<script>
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+		<script>
+				function alert8(mess) {
+				$.messager.alert('My Title', 'save');
+			}
+		</script>
+	</body>
+
+</html>

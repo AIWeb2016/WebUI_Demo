@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>keytip</title>
+		<!-- 文档框架样式 -->
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+		<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+		<style type="text/css">
+			#my-div {
+				width: 800px;
+				display: block;
+				height: 60px;
+				border: 1px solid #ccc;
+				position: relative;
+			}
+			
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 18px;
+			}
+			hr{
+				display: block;
+				margin: 0 0 8px 0;
+			}
+				.pp-ps{
+				display: block;
+				color: #8E8E8E;
+			    margin: 0 0 10px 0;
+			   
+			}
+		</style>
+		<!--修改后-->
+	</head>
+
+	<body>
+		<div class="cont">
+			<h1 class="main_title">顶部提示</h1>
+    <p class="view-desc">基本功能</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<p class="pp-ps">样式</p>
+<hr />	
+<a class="webui-linkbutton btn-grey" onclick="tip.open()">打开顶部提示 </a>
+<a class="webui-linkbutton btn-grey" onclick="tip_other.open()">在下框中打开</a>
+<br />
+<br />
+<div id="my-div"></div>
+<br />
+<script>
+	var tip = new AIKeyTip({
+		callback: function() {
+			//alert("这个是回调函数！");
+		},
+		closeBtn: true,
+		message: '1.亲，宽带账号和密码由系统生成，可在订单详情中查看！<br>2.亲，宽带账号和密码由系统生成，可在订单详情中查看！'
+	});
+	var tip_other = new AIKeyTip({
+		callback: function() {
+			//alert("这个是回调函数！");
+		},
+		idName: "my-div",
+		message: '1.亲，宽带账号和密码由系统生成，可在订单详情中查看！'
+	});
+
+	function openTest() {
+		tip.open();
+	}
+
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		
+	</body>
+
+</html>

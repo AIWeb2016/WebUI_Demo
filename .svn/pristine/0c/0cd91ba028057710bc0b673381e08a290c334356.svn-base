@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>tips-toast</title>
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+			<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+		<!--新增-->
+		<style type="text/css">
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 18px;
+			}
+			
+			p {
+				display: block;
+				padding: 6px 0 6px 2px;
+				margin: 20px 0 20px 0;
+			}
+			
+			.demo-test-div {
+				width: 92%;
+				padding: 20px 0 0 20px;
+				border: 1px #E9E9E9 solid;
+				height: 50px;
+				/*background: #FAFAFA;*/
+			}
+			
+			.tip-test {
+				display: block;
+				width: 500px;
+				height: 100px;
+				border: 1px solid #C0C0C0;
+				float: left;
+				margin: 20px;
+				color: #C0C0C0;
+				position: relative;
+			}
+			hr{
+				display: block;
+				margin: 0 0 8px 0;
+			}
+				.pp-ps{
+				display: block;
+				color: #8E8E8E;
+			    margin: 0 0 10px 0;
+			   
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="cont">
+			<h1 class="main_title">tips-toast</h1>
+			<p class="view-desc">弹出提示框使用案例</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<p class="pp-ps">样式</p>
+<hr />				
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip.open()">成功</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip.setContent('改变后的内容！');tip.open()">改变内容后打开</a>
+<a class="webui-linkbutton btn-blue btn-small" class="webui-linkbutton btn-blue btn-small" onclick="tip.setContent('改变后的内容！');tip.setPosition(500);tip.open()">改变内容和位置后打开</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip2.open()">错误</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip3.open()">疑问</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip4.open()">信息</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip5.open()">警告（重）</a>
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip6.open()">警告（轻）</a>
+<br />
+<br />
+<a class="webui-linkbutton btn-blue btn-small" onclick="tip7.open()">在下边框中上下居中显示</a>
+<br />
+<div id="tip_test" class="tip-test">
+所需显示的外部div必须存在position属性
+</div>
+<script>
+var tip = new AIToastTip({
+	message: "请选择营销案档次",
+	type: "success",
+	timeout: 5000
+});
+var tip2 = new AIToastTip({
+	message: "请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+	type: "error",
+	timeout: 10000
+});
+var tip3 = new AIToastTip({
+	message: "请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+	type: "question",
+	timeout: 10000
+});
+var tip4 = new AIToastTip({
+	message: "请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+	type: "info",
+	timeout: 10000
+});
+var tip5 = new AIToastTip({
+	message: "请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+	type: "warn",
+	timeout: 10000
+});
+var tip6 = new AIToastTip({
+	message: "请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+	type: "warn-little",
+	timeout: 10000
+});
+var tip7 = new AIToastTip({
+	message: "请选择营销案档次",
+	type: "warn-little",
+	id: "tip_test",
+	timeout: 10000
+});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+	
+
+	</body>
+
+</html>

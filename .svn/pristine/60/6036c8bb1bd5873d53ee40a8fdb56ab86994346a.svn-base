@@ -1,0 +1,92 @@
+body {
+	
+	font-family: "微软雅黑";
+}
+
+.div-a {
+	position: absolute;
+	width: 64%;
+	height: auto;
+	
+}
+
+ .lis {
+	display: inline-block;
+	background: #f78b4a;
+	width: 12%;
+	text-align: center;
+	height: auto;
+	color: #fff;
+	padding: 10px;
+	margin: 6px;
+	text-decoration: none;
+	border-bottom: 2px #f06521 solid;
+	/*-webkit-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius:6px ;*/
+	cursor: pointer;
+}
+
+
+.div-mobile {
+	position: absolute;
+	background: url(../img/6S.png);
+	background-size: 320px 640px;
+	width: 320px;
+	height: 640px;
+	margin: 0 0 0 68%;
+	overflow-y: hidden;
+	z-index: 55;
+	
+}
+
+.iframe-mobile {
+	width: 282px;
+	height: 490px;
+	background: #fff;
+	margin: 74px 0 0 18px;
+	border: 1px #333333 solid;
+	
+}
+
+.title-p {
+	display: block;
+	font-size: 22px;
+	text-align: center;
+	color: #787878;
+}
+
+.ext{
+	
+	background:#35b055;
+	color: #FFFFFF;
+	border-bottom: 2px #35B055 solid;
+}
+.div-code{
+	position: absolute;
+	width: 64%;
+	height: 390px;	
+	background: #fef1e0;
+	margin: 250px 0 0 0;
+	border: 1px #C0C0C0 solid;
+	overflow: scroll;
+	-webkit-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	
+}
+.div-code pre{
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.img-logo{
+	display: block;
+	position: absolute;
+	margin: 10px 0 0 88px;
+}
+hr{
+	
+	border: 1px #90c850 solid;
+}

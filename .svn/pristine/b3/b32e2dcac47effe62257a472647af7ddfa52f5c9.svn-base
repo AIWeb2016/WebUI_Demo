@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 文档框架样式 -->
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />  
+    <link rel="stylesheet" href="../../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+    <script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="../../js/rainbow.min.js"></script>
+<style>
+	h1{
+      		font-size: 20px;
+      	}
+      	h2{
+      		font-size: 18px;
+      		
+      	}
+      	
+      	p{
+      		
+      		display: block;
+      		padding: 6px 0 6px 2px;
+      		margin: 20px 0 20px 0;
+      	}
+      	.datagrid{
+      		border-right: 1px #ccc solid;
+      		
+      	}
+</style>
+</head>
+
+<body>
+	
+<div class="cont">
+    <h1 class="main_title">数据结构表格 TreeGrid</h1>
+    <p class="view-desc">数据结构表格，可折叠开打每条结构内容</p>
+    <div class="demo_content">
+        <!-- 组件示例区域 -->
+        <div class="aries_demo bs-example">
+    <table id="dg" ></table>
+<script>
+    $(function(){
+        $('#dg').treegrid({
+            width:688,
+            height:350,  
+            url:'data/treegrid_data3.json',  
+            method:'get',  
+            rownumbers:true, //显示行号列
+            pagination:true, //显示分页工具栏
+            singleSelect:true,//只能单选行
+            loadMsg:'请稍候，数据加载中...',//自定义等待消息
+            idField:'id',    
+            treeField:'name', 
+            columns:[[    
+                {field:'name',title:'姓名',width:220},    
+                {field:'size',title:'流量M',width:200},    
+                {field:'date',title:'日期',width:150}
+                
+            ]]    
+        }); 
+    })
+</script>
+        </div>  
+        <!-- 组件示例代码区域 -->
+        <div class="highlight" ></div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+</body>
+
+</html>

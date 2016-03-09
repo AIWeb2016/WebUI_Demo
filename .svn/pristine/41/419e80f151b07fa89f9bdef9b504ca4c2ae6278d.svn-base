@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>流程条</title>
+		<!-- 文档框架样式 -->
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+		
+		<style type="text/css">
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 16px;
+			}
+			
+			.demo-test-div {
+				width: 98%;
+				padding: 20px 0 0 20px;
+				border: 1px #E9E9E9 solid;
+				height: 50px;
+				/*background: #FAFAFA;*/
+			}
+			
+			p {
+				display: block;
+				padding: 6px 0 6px 2px;
+				margin: 20px 0 20px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="cont">
+			<h1 class="main_title">流程条</h1>
+			<p>流程条：通常用于一个流程较长的任务时；明确告知用户当前的位置，以及用户对这个任务的整体做到心里有数</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+
+<a href="#nogo" class="webui-linkbutton btn-grey" id="prevStep" onclick="dd.prevStep()">上一步</a>
+<a href="#nogo" class="webui-linkbutton btn-grey" id="nextStep" onclick="dd.nextStep();">下一步</a>
+<a href="#nogo" class="webui-linkbutton btn-grey" id="getStep" onclick="alert2(dd);">得到当前步数</a>
+<!--<a href="#nogo" class="webui-linkbutton btn-grey" id="disableVisited" onclick="dd.disableVisited();">disableVisited</a>-->
+
+<br />
+<br />
+<div class="demo-test-div">
+<div id="demo" style="width: 750px;"></div>
+</div>
+<script>
+function alert2(obj) {
+	$.messager.alert('标题', '您当前是第' + obj.getStep() + '步');
+}
+$(function(){
+	var opt = {
+	"item": [{
+		"text": "第一步"
+	}, {
+		"text": "第二步"
+	}, {
+		"text": "第三步"
+	}, {
+		"text": "第4步"
+	}],
+	step: 2,
+	visited: false,
+	afterStep: lalala
+};
+window.dd = $("#demo").AIStep(opt);
+
+function lalala(asdas) {
+	//							alert("to step" + asdas.getStep());
+}
+});
+	
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+	</body>
+
+</html>

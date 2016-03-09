@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/extends.css" />		
+		<script src="../lib/jquery/jquery-2.1.4.min.js"></script>	
+		<script type="text/javascript" src="js/extends.js"></script>
+		<!--<link type="text/css" rel="stylesheet" href="css/prettify.css" />
+		<script type="text/javascript" src="js/prettify.js"></script>-->
+		
+	</head>
+	<body>
+
+		<div class="div-a" id="div_a">
+			<img src="img/webui1.png" class="img-logo" style="width: 148px;height: 40px;"/>
+			<p class="title-p">WEBUI移动端组件范例20160217</p>
+			<hr />
+			<ul>
+				<li class="lis" value="../app_btn.html">1.按钮</li>
+				<li class="lis" value="../grid.html">2.表格</li>
+				<li class="lis" value="../input.html">3.输入框</li>
+				<li class="lis" value="../dtPicker.html">4.时间选择</li>
+				<li class="lis" value="../loading.html">5.加载</li>
+				<li class="lis" value="../collapse.html">6.折叠面板</li>
+				<li class="lis" value="../select.html">7.选择</li>
+				<li class="lis" value="../tab.html">8.标签</li>
+				<li class="lis" value="../tips.html">9.提示</li>
+				<li class="lis" value="../hr.html">10.分割线</li>
+				<li class="lis" value="../doc/webui_iconfont/demo.html">11.图标</li>
+			</ul>
+			<hr />
+		</div>
+		<div class="div-code">
+			<pre id="div_code">
+			</pre>
+		</div>
+		<div class="div-mobile">
+			<iframe id="ifr_m" class="iframe-mobile" src="" scrolling="auto"></iframe>
+		</div>
+		
+		
+		
+	</body>
+
+</html>

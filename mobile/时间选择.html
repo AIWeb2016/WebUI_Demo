@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>时间选择</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css320/picker.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css320/input.css"/>
+	</head>
+
+	<body style="background-color: #eee;">
+		<input class="ui-input" type="text" name="date_input" id="date_input_begin" readonly/>
+		<input class="ui-input" style="margin-top: 30px;" type="text" name="date_input" id="date_input_end" readonly/>
+		<input type="button" id="setPicker" value="获取选中值" />
+		<select name="heh" style="width: 80%;height: 50px;display: block;">
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+			<option value="">xuanziang1</option>
+		</select>
+	</body>
+	<script src="lib/jquery/2.1.4/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/picker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="dateScope.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			var dd_start;
+			$("#date_input_begin").bind("touchend",function(){
+				dd_start = $(this).dateScope();
+			})
+			$("#date_input_end").bind("touchend",function(){
+				console.log(dd_start.getSelectValueStr());
+				$(this).dateScope({
+					firstDate:dd_start.getSelectValueStr()
+				});
+			})
+			$("#setPicker").click(function(){
+				alert(dd_start.getSelectValueStr());
+			});
+			
+	</script>
+
+</html>

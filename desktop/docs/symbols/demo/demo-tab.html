@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>PC端Tab</title>
+		<!-- 文档框架样式 -->
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+		<style>
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 18px;
+				display: block;
+				margin: 20px 0 20px 0;
+			}
+			
+			p {
+				display: block;
+				padding: 6px 0 6px 2px;
+				margin: 20px 0 20px 0;
+			}
+			
+			.demo-test-div {
+				width: 98%;
+				padding: 20px 0 0 20px;
+				border: 1px #E9E9E9 solid;
+				height: 50px;
+				/*background: #FAFAFA;*/
+			}
+			
+			.label {
+				color: #AAAAAA
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="cont">
+			<h1>Tips</h1>
+
+			<p>1.tab样式5（顶部tab）</p>
+
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div id="tt" class="webui-tabs" data-options="tabWidth:160,plain:true,scrollIncrement:160" style="width:700px;height:250px">
+	<div title="客户首页" style="padding:10px">
+		客服首页内容
+	</div>
+	<div title="业务名称1" style="padding:10px">
+		业务名称1
+	</div>
+	<div title="业务名称2" data-options="closable:true" style="padding:10px">
+		业务名称2
+	</div>
+	<div title="业务名称3" data-options="closable:true" style="padding:10px">
+		业务名称3
+	</div>
+	<div title="业务名称4" data-options="closable:true" style="padding:10px">
+		业务名称4
+	</div>
+	<div title="业务名称5" data-options="closable:true" style="padding:10px">
+		业务名称5
+	</div>
+</div>
+<script>
+$(function() {
+	setTabs();
+
+	function setTabs() {
+		$('#tt').tabs({
+			plain: true,
+			narrow: $('#narrow').is(':checked'),
+			pill: $('#pill').is(':checked'),
+			justified: $('#justified').is(':checked')
+		})
+	}
+})
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p class="main_title">2.页面二级tab样式</p>
+
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div id="tab_newadd" class="webui-tabs" data-options="plain:true,scrollIncrement:160" style="width:700px;height:250px">
+	<div title="业务一" style="padding:10px">
+		业务一
+	</div>
+	<div title="业务二" style="padding:10px">
+		业务二
+	</div>
+	<div title="业务三" data-options="closable:true" style="padding:10px">
+		业务三
+	</div>
+</div>
+<script>
+	$(function() {
+		$('#tab_newadd').tabs({
+			className: "gray-bg"
+		})
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../../../js/webui.js"></script>
+	</body>
+
+</html>

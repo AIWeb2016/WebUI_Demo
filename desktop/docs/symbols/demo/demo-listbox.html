@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<!-- 文档框架样式 -->
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+	</head>
+	<style type="text/css">
+		h1 {
+			font-size: 20px;
+		}
+		
+		h2 {
+			font-size: 18px;
+		}
+		
+		hr{
+				display: block;
+				margin: 0 0 8px 0;
+			}
+				.pp-ps{
+				display: block;
+				color: #8E8E8E;
+			    margin: 0 0 10px 0;
+			   
+			}
+	</style>
+
+	<body>
+		<div class="cont">
+			<h1 class="main_title">快速搜索下拉框</h1>
+			 <p class="view-desc">基本功能</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<p class="pp-ps">样式</p>
+<hr />
+	<select id="com" class="webui-combobox" name="state" disdata-options="editable:false,panelHeight:'auto'" style="width:200px;height: 28px;">
+		<option value="AL">业务名称1</option>
+		<option value="AL1">业务名称2</option>
+		<option value="AL2">业务名称3</option>
+		<option value="AL3" disabled="disabled">业务名称4</option>
+		<option value="AL4" selected="selected">业务名称5</option>
+		<option value="AK">Alaska</option>
+		<option value="AZ">Arizona</option>
+		<option value="AR">Arkansas</option>
+		<option value="CA">California</option>
+		<option value="CO">Colorado</option>
+		<option value="CT">Connecticut</option>
+		<option value="DE">Delaware</option>
+		<option value="FL">Florida</option>
+		<option value="GA">Georgia</option>
+		<option value="HI">Hawaii</option>
+		<option value="ID">Idaho</option>
+	</select>
+	<a href="#nogo" class="webui-linkbutton btn-white" id="btns">获得下拉框值</a>
+
+<script>
+	function alert9(mess) {
+		$.messager.alert('My Title', mess);
+	}
+	$("#btns").bind("click", function() {
+		var vals = $("#com").combobox("getValue"); //拿val方法
+		var text = $("#com").combobox("getText"); //拿val方法
+		alert9(text)
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+
+				<div class="aries_demo bs-example">
+<p class="pp-ps">状态</p>
+<hr />
+	<select class="webui-combobox" disabled="disabled" name="state" disdata-options="editable:false,panelHeight:'auto'" style="width:200px;height: 28px;">
+		<option value="AL">业务名称1</option>
+		<option value="AL1">业务名称2</option>
+		<option value="AL2">业务名称3</option>
+		<option value="AL3" disabled="disabled">业务名称4</option>
+		<option value="AL4" selected="selected">业务名称5</option>
+		<option value="AK">Alaska</option>
+		<option value="AZ">Arizona</option>
+		<option value="AR">Arkansas</option>
+		<option value="CA">California</option>
+		<option value="CO">Colorado</option>
+		<option value="CT">Connecticut</option>
+		<option value="DE">Delaware</option>
+		<option value="FL">Florida</option>
+		<option value="GA">Georgia</option>
+		<option value="HI">Hawaii</option>
+		<option value="ID">Idaho</option>
+	</select>
+
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+		<script>
+		</script>
+	</body>
+
+</html>

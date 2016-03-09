@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+		<title>下拉刷新</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				-webkit-text-size-adjust: none;
+			}
+			html {
+				font-size: 10px;
+			}
+			
+			body {
+				background-color: #f1f1f1;
+				font-size: 1.2em;
+			}
+			.ui-drag-list {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-direction: column;
+				-webkit-box-orient: vertical;
+				box-orient: vertical;
+				-webkit-flex-direction: column;
+				flex-direction: column;
+			}
+			
+			.ui-drag-inner {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+				background-color: #fff;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+			}
+			.ui-drag-inner .item {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-align: center;
+				-webkit-box-align: center;
+				box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				padding: 3.125%;
+				border-bottom: 1px solid #ddd;
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.ui-drag-inner .item img {
+				display: block;
+				width: 40px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.ui-drag-inner .item h3 {
+				display: block;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+				width: 100%;
+				max-height: 40px;
+				overflow: hidden;
+				line-height: 20px;
+				margin: 0 10px;
+				font-size: 1.2rem;
+			}
+			
+			 .ui-drag-inner .item .date {
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				color: #999;
+			}
+			*,
+			*:before,
+			*:after {
+				-webkit-user-select: none;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				-moz-user-select: -moz-none;
+				/*禁止用户选中文本，-moz-none，是写给老版本的ff的方法，当然新版本也是向上兼容的	
+				目前还是个私用属性，ios2.0以上的safari实现良好，安卓尚未支持*/
+				-webkit-touch-callout: none;
+				-ms-touch-action: pan-y;
+			}
+		</style>
+		<link rel="stylesheet" href="css320/drag.css">
+	</head>
+
+	<body>
+
+		<div class="ui-drag-list">
+			<div class="ui-drag-inner">
+				<div class="list">
+					<a class="item" href="#">
+					<img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+					<h3>1Apple 苹果 iPhone 6 Plus 16G 4G手机 金色 公开版（三网通用A1524)</h3>
+					<span class="date">2014-14-14</span>
+				</a>
+				<a class="item" href="#">
+					<img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+					<h3>2Apple 苹果 iPhone 6 Plus 16G 4G手机 金色 公开版（三网通用A1524)</h3>
+					<span class="date">2014-14-14</span>
+				</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="lib/jquery/2.1.4/jquery.js"></script>
+		<script src="js/drag.js"></script>
+		<script>
+			var list = $(".ui-drag-inner").AIDrag({
+				loadUpFn: function(me) {
+					$.ajax({
+						type: 'GET',
+						url: 'json/update.json',
+						dataType: 'json',
+						success: function(data) {
+							var result = '';
+							for (var i = 0; i < data.lists.length; i++) {
+								result += '<a class="item opacity" href="' + data.lists[i].link + '">' + '<img src="' + data.lists[i].pic + '" alt="">' + '<h3>' + data.lists[i].title + '</h3>' + '<span class="date">' + data.lists[i].date + '</span>' + '</a>';
+							}
+							// 为了测试，延迟1秒加载
+							setTimeout(function() {
+								$('.list').html('');
+								$('.list').prepend(result);
+								me.loadsuccess(); //加载方法
+								setTimeout(function() {
+									me.resetload();
+								}, 1000);
+							}, 1000);
+						},
+						error: function(xhr, type) {
+							alert('Ajax error!');
+							me.resetload();
+						}
+					});
+				},
+				loadDownFn: function(me) {
+					$.ajax({
+						type: 'GET',
+						url: 'json/more.json',
+						dataType: 'json',
+						success: function(data) {
+							var result = '';
+							for (var i = 0; i < data.items.length; i++) {
+								result += '<a class="item opacity" href="' + data.items[i].link + '">' + '<img src="' + data.items[i].pic + '" alt="">' + '<h3>' + data.items[i].title + '</h3>' + '<span class="date">' + data.items[i].date + '</span>' + '</a>';
+							}
+							// 为了测试，延迟1秒加载
+							setTimeout(function() {
+								$('.list').append(result);
+								me.resetload();
+							}, 1000);
+						},
+						error: function(xhr, type) {
+							alert('Ajax error!');
+							me.resetload();
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+
+</html>

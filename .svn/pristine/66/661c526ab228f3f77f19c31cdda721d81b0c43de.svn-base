@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <!-- 文档框架样式 -->
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.css"><!--修改后-->
+    <link rel="stylesheet" type="text/css" href="../../../css/keytip.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+    <script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="../../js/rainbow.min.js"></script>
+     <script type="text/javascript" src="../../../js/keyTip.js"></script> 
+<style>
+	h1 { 
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 18px;
+			}
+			hr{
+				display: block;
+				margin: 0 0 8px 0;
+			}
+				.pp-ps{
+				display: block;
+				color: #8E8E8E;
+			    margin: 0 0 10px 0;
+			   
+			}
+</style>
+</head>
+
+<body>
+<div class="cont">
+    <h1 class="main_title">手风琴 Accordion</h1>
+  
+    <p class="view-desc">基本功能：手风琴效果，可折叠展开内容，提供两种使用方法</p>
+    <div class="demo_content">
+        <!-- 组件示例区域 -->
+        <div class="aries_demo bs-example">
+<p class="pp-ps">样式(页面渲染)</p>
+<hr />
+<div class="webui-accordion" style="width:500px;height:auto;">
+    <div title="代办人" >
+        <div style="padding: 20px;">
+            <p>代办人内容</p>
+        </div>
+    </div>
+</div>
+<div class="webui-accordion" style="width:500px;height:auto;">
+    <div title="推荐人" >
+        <div style="padding: 20px;">
+            <p>推荐人内容</p>
+        </div>
+    </div>
+</div>
+        </div>  
+        <!-- 组件示例代码区域 -->
+        <div class="highlight" ></div>
+    </div>
+    
+    <div class="demo_content">
+        <!-- 组件示例区域 -->
+        <div class="aries_demo bs-example">
+<p class="pp-ps">样式(JS加载)</p>
+<hr />
+    <div id="accordion_demo" style="width:500px;height:auto;" >
+        <div title="推荐人" >
+            <div style="padding: 20px;">
+                <p>推荐人内容</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('#accordion_demo').accordion({closed:true}); 
+        }) 
+    </script>
+        </div>  
+        <!-- 组件示例代码区域 -->
+        <div class="highlight" ></div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+</body>
+
+</html>

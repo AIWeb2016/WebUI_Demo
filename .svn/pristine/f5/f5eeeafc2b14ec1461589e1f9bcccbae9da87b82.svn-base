@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/font-awesome.css">	
+		<link rel="stylesheet" type="text/css" href="../../../../webui/1.0.0/pc/css/webui.css">
+		<script type="text/javascript" src="../../../lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/rainbow.min.js"></script>
+	    <script type="text/javascript" src="../../../../webui/1.0.0/pc/js/webui.js"></script>
+		<style type="text/css">
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 18px;
+			}
+			
+			p {
+				display: block;
+				padding: 6px 0 6px 2px;
+				margin: 20px 0 20px 0;
+			}
+			
+			.demo-test-div {
+				width: 92%;
+				padding: 20px 0 0 20px;
+				border: 1px #E9E9E9 solid;
+				height: 50px;
+				/*background: #FAFAFA;*/
+			}
+			
+			.label {
+				color: #AAAAAA
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="cont">
+			<h1 class="main_title">选择控件</h1>
+			<h2>select 选择框使用案例</h2>
+			<p>1、单选框radio </p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="radio-nomarl"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getSelectedIndex());">获取选中索引</a>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getSelectedValue());">获取选中值</a>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getSelectedField());">获取选中对象</a>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getObject());">获取刚选中对象</a>
+</div>
+<script>
+	//普通单选
+	var radio_normal = $("#radio-nomarl").AISelect({
+		type: 'radio',
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1',
+			//mustSelect:true
+		}, {
+			channelId: '1002',
+			channelName: '选项2'
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(radio_normal) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+//			console.log(radio_normal.getIndex());
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+
+	<div class="cont">
+			
+			<p>2、单选框radio(业务场景：默认只选取一个，其他均不可选)</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="radio-nomarl2"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal2.getSelectedIndex());">获取选中索引</a>
+	<!--<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getSelectedValue());">获取选中值</a>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getSelectedField());">获取选中对象</a>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_normal.getObject());">获取刚选中对象</a>-->
+</div>
+<script>
+	//普通单选
+	var radio_normal2 = $("#radio-nomarl2").AISelect({
+		type: 'radio',
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1',
+			mustSelect:true
+		}, {
+			channelId: '1002',
+			channelName: '选项2'
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(radio_normal) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+//			console.log(radio_normal.getIndex());
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p>3、复选框checkbox </p>
+			<div class="demo_content">
+
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="checkbox-normal"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(checkbox_normal.getSelectedIndex());">获取选中索引</a>
+</div>
+<script>
+	//块级普通单选
+	var checkbox_normal = $("#checkbox-normal").AISelect({
+		type: 'checkbox',
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1',
+			mustSelect: true
+		}, {
+			channelId: '1002',
+			channelName: '选项2'
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(obj) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p>4、单选框radioBlock-样式1(业务场景：默认只选取一个，其他均不可选)</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="radio-block"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_block.getSelectedIndex());">获取选中索引</a>
+</div>
+<script>
+	//块级普通单选
+	var radio_block = $("#radio-block").AISelect({
+		type: 'radioBlock',
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1'
+		}, {
+			channelId: '1002',
+			channelName: '选项2',
+			mustSelect: true
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(obj) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p>5、单选框radioBlock-样式2</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="radio-block-bg"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(radio_block_2.getSelectedIndex());">获取选中索引</a>
+</div>
+<script>
+	//块级普通单选
+	var radio_block_2 = $("#radio-block-bg").AISelect({
+		type: 'radioBlock',
+		background: "background",
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1'
+		}, {
+			channelId: '1002',
+			channelName: '选项2'
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(obj) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p>6、复选框checkBlock</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="checkbox-block"></div>
+	<a class="webui-linkbutton btn-grey" onclick="alert1(checkbox_block.getSelectedIndex());">获取选中索引</a>
+</div>
+<script>
+	//块级复选框
+	var checkbox_block = $("#checkbox-block").AISelect({
+		type: 'checkboxBlock',
+		displayField: 'channelName',
+		valueField: 'channelId',
+		data: [{
+			channelId: '1001',
+			channelName: '选项1'
+		}, {
+			channelId: '1002',
+			channelName: '选项2'
+		}, {
+			channelId: '1003',
+			channelName: '选项3'
+		}, {
+			channelId: '1004',
+			channelName: '选项4',
+			disabled: true
+		}],
+		onSelect: function(obj) {
+			//alert(JSON.stringify(obj.getSelectedIndex()));
+		},
+		must: false
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		<div class="cont">
+			<p>7、级联选择</p>
+			<div class="demo_content">
+				<!-- 组件示例区域 -->
+				<div class="aries_demo bs-example">
+<div class="content">
+	<div id="cascade-select"></div>
+</div>
+<script>
+	//块级复选框
+	var cascade_select = $("#cascade-select").AISelectQuery({
+		width: 400,
+		fields: [{
+			id: 'item1',
+			name: '手机品牌',
+			content: [{
+				text: '苹果',
+				value: '1'
+			}, {
+				text: '小米',
+				value: '2'
+			}, {
+				text: '三星',
+				value: '3'
+			}]
+		}, {
+			id: 'item2',
+			name: '手机颜色',
+			content: [{
+				text: '白色',
+				value: '1'
+			}, {
+				text: '土豪金',
+				value: '2'
+			}, {
+				text: '深空灰',
+				value: '3'
+			}],
+			multi: true
+		}, {
+			id: 'item3',
+			name: '价格',
+			content: [{
+				text: '0~500',
+				value: '1'
+			}, {
+				text: '500~2000',
+				value: '2'
+			}, {
+				text: '2000~5000',
+				value: '3'
+			}]
+		}]
+	});
+</script>
+				</div>
+				<!-- 组件示例代码区域 -->
+				<div class="highlight"></div>
+			</div>
+		</div>
+
+		
+		<script type="text/javascript">
+			function alert1(mess) {
+				$.messager.alert('标题', mess);
+			}
+		</script>
+	</body>
+
+</html>
